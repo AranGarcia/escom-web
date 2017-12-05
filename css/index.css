@@ -6,43 +6,48 @@ body{
 
 .contenedor-slider{
 	float: left;
-	width: 65%;
+	width: 70%;
 	height: 100vh;
-	background-color: red;
-	display: inline-block;
+	background-color: #FFFFFF;
+}
+
+.contenedor-slider img{
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	height: 100vh;
 }
 
 .contenedor-login{
 	float: left;
-	width: 35%;
+	width: 30%;
 	height: 100vh;
-	background-color: blue;
-	display: inline-block;
+	background-color: #0b1521;
 	text-align: center;
-}
-
-/*FORMATO DE LAS ETIQUETAS DEL FORM*/
-label{
-	display: block;
-	margin: 0 20px;
 	color: #FFFFFF;
-	font-size: 16px;
-	letter-spacing: 0.4px;
-	line-height: 22px;
 }
 
-input{
-	display: block;
-	margin: 0 20px;
-	width: 100%;
-	max-width: 300px;
+.contenedor-login img{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	height: 60px;
 }
 
-button{
+.titulo-escom-sseis{
+	position: absolute;
+	top: 100px;
 	color: #FFFFFF;
-	background-color: red;
-	border: none;
-	text-decoration: none;
-	padding: 10px 5px;
-	margin-top: 30px;
+	font-size: 32px;
+}
+
+.contenedor-form_login{
+	width: 80%;
+	overflow: hidden;
+}
+
+.contenedor-ask-login{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
 }

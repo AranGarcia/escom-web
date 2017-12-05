@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet"> 
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/login_form.js"></script>
     <title>Inicio de sesi&oacute;n</title>
@@ -13,18 +14,29 @@
 <body>
     <!-- Slider -->
     <div class="contenedor-slider">
-
+    	<img src="img/slider-index/01-ceremonia.jpg">
     </div>
 
     <!-- Login -->
-    <div class="contenedor-login">
-        <form id="form_login">
-            <label for="boleta">Boleta</label>
-            <input type="text" name="boleta" id="boleta">
-            <label for="contrasena">Contrase&ntilde;a</label>
-            <input type="password" name="contrasena" id="contrasena">
-            <button type="submit">Iniciar sesi&oacute;n</button>
-        </form>
+    <div class="contenedor-login centrar-verticalmente">
+    	<!-- Logo de escom, esquina superior derecha -->
+    	<img src="img/logo_escom.svg">
+    	<!-- Nombre del sistema -->
+    	<div class="titulo-escom-sseis">ESCOM-SSEIS</div>
+    	<!-- Contiene el formulario -->
+    	<div class="contenedor-form_login">
+    		<h2>Iniciar Sesi&oacute;n</h2>
+    		<!-- Formulario -->
+		    <form id="form_login">
+		        <label for="boleta">Boleta</label>
+		        <input type="text" name="boleta" id="boleta" placeholder="N&uacute;mero de boleta">
+		        <label for="contrasena">Contrase&ntilde;a</label>
+		        <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
+		        <button type="submit">Iniciar Sesi&oacute;n</button>
+		    </form>
+    	</div>
+    	<!-- Enlace en caso de tener problemas con el login -->
+    	<div class="contenedor-ask-login"><a href="#">No puedo acceder a mi cuenta</a></div>
     </div>
 
     </div>
