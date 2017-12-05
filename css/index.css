@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+body{
+	font-size: 0;
+}
+
+.contenedor-slider{
+	float: left;
+	width: 65%;
+	height: 100vh;
+	background-color: red;
+	display: inline-block;
+}
+
+.contenedor-login{
+	float: left;
+	width: 35%;
+	height: 100vh;
+	background-color: blue;
+	display: inline-block;
+	text-align: center;
+}
+
+/*FORMATO DE LAS ETIQUETAS DEL FORM*/
+label{
+	display: block;
+	margin: 0 20px;
+	color: #FFFFFF;
+	font-size: 16px;
+	letter-spacing: 0.4px;
+	line-height: 22px;
+}
+
+input{
+	display: block;
+	margin: 0 20px;
+	width: 100%;
+	max-width: 300px;
+}
+
+button{
+	color: #FFFFFF;
+	background-color: red;
+	border: none;
+	text-decoration: none;
+	padding: 10px 5px;
+	margin-top: 30px;
+}
