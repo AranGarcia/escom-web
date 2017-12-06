@@ -1,0 +1,3 @@
+INSERT INTO public.usuario (nom_usuario, nom, ap, am, contrasena, rol_usuario, email, activo, num_intentos) VALUES ('2016529434', 'Linus', 'Brown', 'Sanchez', 'password', 'alumno', 'correoejemplo@alumno.ipn.mx', true, 0);
+INSERT INTO public.usuario (nom_usuario, nom, ap, am, contrasena, rol_usuario, email, activo, num_intentos) VALUES ('2016630123', 'Alberto', 'Moreno', 'Gutierrez', 'password', 'alumno', 'correoejemplo@alumno.ipn.mx', true, 0);
+INSERT INTO public.usuario (nom_usuario, nom, ap, am, contrasena, rol_usuario, email, activo, num_intentos) VALUES ('becas2017', 'Miguel', 'Hernandez', 'Santiago', '123', 'admin', 'becas@escom.ipn.mx', true, 0);

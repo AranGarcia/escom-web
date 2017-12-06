@@ -1,0 +1,1 @@
+INSERT INTO public.asistencia_evento (tipo, boleta, asiste, num_acompanantes, encuesta_realizada) VALUES ('generacion', '2016630123', false, 0, false);
