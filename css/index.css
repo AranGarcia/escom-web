@@ -5,49 +5,41 @@ body{
 }
 
 .contenedor-slider{
-	float: left;
-	width: 70%;
+	position: absolute;
+	width: 100%;
 	height: 100vh;
-	background-color: #FFFFFF;
+	background-color: #F2F4F4;
 }
 
 .contenedor-slider img{
 	width: 100%;
+	height: 100vh;
 	object-fit: cover;
 	object-position: center;
-	height: 100vh;
+	opacity: 0;
 }
 
 .contenedor-login{
-	float: left;
-	width: 30%;
-	height: 100vh;
-	background-color: #0b1521;
+	position: absolute;
+	width: 90%;
+	max-width: 400px;
+	padding: 40px;
+	background-color: #030b19;
 	text-align: center;
 	color: #FFFFFF;
 }
 
-.contenedor-login img{
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	height: 60px;
+.logo-escom{
+	margin: 0 auto 20px;
+	height: 80px;
 }
 
 .titulo-escom-sseis{
-	position: absolute;
-	top: 100px;
 	color: #FFFFFF;
 	font-size: 32px;
+	margin-bottom: 40px;
 }
 
-.contenedor-form_login{
-	width: 80%;
-	overflow: hidden;
-}
-
-.contenedor-ask-login{
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
+.contenedor-login a{
+	float: right;
 }
