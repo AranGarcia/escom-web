@@ -5,6 +5,9 @@ return array(
         "name" => "escom_sseis",
         "user" => "postgres",
         "passw" => "root"
+    ),
+    "path" => array(
+        "img" => "img"
     )
 );
 ?>

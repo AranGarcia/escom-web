@@ -26,20 +26,29 @@ $result = pg_query($query) or die("Query failed: " . pg_last_error());
     
     // Extraccion de campo nom_usuario y contrasena
 $user_array = pg_fetch_array($result, NULL, PGSQL_ASSOC);
+// Usuario bloqueado
 if ($user_array["activo"] == "f") {
     echo "Usuario inactivo";
-} else if ($user_array["contrasena"] == $contrasena) {
+}
+// Acceso correcto 
+else if ($user_array["contrasena"] == $contrasena) {
+    $update_query = "UPDATE usuario SET num_intentos = 0 WHERE nom_usuario = '" . $usuario . "';";
+    pg_query($update_query) or die("Query failed: " . pg_last_error());
+
     $_SESSION["usuario_activo"] = $user_array["nom_usuario"];
     echo 0;
 } else {
+    // Limite de intentos de acceso alcanzado
     if ($user_array["num_intentos"] > 4) {
         $update_query = "UPDATE usuario SET activo = FALSE WHERE nom_usuario = '" . $usuario . "';";
         pg_query($update_query) or die("Query failed: " . pg_last_error());
-        echo "Usuario bloqueado.";
-    } else {
+        echo 1;
+    }
+    // Usuario y/o Contraseña incorrecta
+    else {
         $update_query = "UPDATE usuario SET num_intentos = num_intentos + 1 WHERE nom_usuario = '" . $usuario . "';";
         pg_query($update_query) or die("Query failed: " . pg_last_error());
-        echo "Acceso incorrecto";
+        echo 2;
     }
 }
 ?>

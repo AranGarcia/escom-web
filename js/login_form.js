@@ -14,8 +14,11 @@ $(document).ready(function(e){
                 if(resp == 0){
                     window.location = "../php/alumno.php";
                 }
+                else if(resp == 1){
+                    alert("Usuario bloqueado.");
+                }
                 else{
-                    alert("Usuario y/o Contraseña inválido.");
+                    alert("Usuario y/o Contraseña incorrecto.");
                 }
             }
         });
