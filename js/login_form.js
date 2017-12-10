@@ -11,8 +11,14 @@ $(document).ready(function(e){
             cache: false,
             // Repuesta con éxito
             success: function(resp){
+                /* 
+                RESPUESTAS:
+                0 : Usuario iniciado con éxito
+                1 : Usuario bloqueado
+                2 : Usuario/Contraseña incorrecto
+                */
                 if(resp == 0){
-                    window.location = "../php/alumno.php";
+                    window.location = "http://localhost/alumno.php";
                 }
                 else if(resp == 1){
                     alert("Usuario bloqueado.");

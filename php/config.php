@@ -8,6 +8,11 @@ return array(
     ),
     "path" => array(
         "img" => "img"
+    ),
+    "urls" => array(
+        "base" => "http://localhost",
+        "alumno" => "http://localhost/alumno.php",
+        "logout" => "http://localhost/php/logout.php"
     )
 );
 ?>

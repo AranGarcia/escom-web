@@ -21,14 +21,15 @@ $usuario = $_POST["boleta"];
 $contrasena = $_POST["contrasena"];
     
     // Ejecuta query
-$query = "SELECT nom_usuario, contrasena, activo, num_intentos FROM usuario WHERE nom_usuario = '" . $usuario . "';";
+$query = "SELECT nom_usuario, contrasena, rol_usuario, activo, num_intentos 
+    FROM usuario WHERE nom_usuario = '" . $usuario . "' AND rol_usuario = 'alumno';";
 $result = pg_query($query) or die("Query failed: " . pg_last_error());
     
     // Extraccion de campo nom_usuario y contrasena
 $user_array = pg_fetch_array($result, NULL, PGSQL_ASSOC);
 // Usuario bloqueado
 if ($user_array["activo"] == "f") {
-    echo "Usuario inactivo";
+    echo 1;
 }
 // Acceso correcto 
 else if ($user_array["contrasena"] == $contrasena) {
@@ -36,6 +37,7 @@ else if ($user_array["contrasena"] == $contrasena) {
     pg_query($update_query) or die("Query failed: " . pg_last_error());
 
     $_SESSION["usuario_activo"] = $user_array["nom_usuario"];
+    $_SESSION["usuario_tipo"] = $user_array["rol_usuario"];
     echo 0;
 } else {
     // Limite de intentos de acceso alcanzado
