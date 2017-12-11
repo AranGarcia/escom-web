@@ -29,14 +29,14 @@ if (isset($_SESSION["usuario_activo"])) {
 <body>
     <!-- Slider -->
     <div class="contenedor-slider">
-    	<img src="img/slider-index/01-ceremonia.jpg">
+        <img src="img/slider-index/01-ceremonia.jpg">
     </div>
 
      <!-- Contenedor que centra el login -->
     <div class="cien-cien centrar-verticalmente">
         <div class="contenedor-login">
-            <!-- Logo de escom, esquina superior derecha -->
-            <img class="logo-escom" src="img/logo_escom_blanco.svg">
+            <!-- Logo de escom -->
+            <img class="logo-escom-80" src="img/logo_escom_blanco.svg">
             <!-- Nombre del sistema -->
             <div class="titulo-escom-sseis">ESCOM-SSEIS</div>
             <h2>Iniciar Sesi&oacute;n</h2>

@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+body{
+	font-size: 0;
+	background-color: #F2F4F4;
+}
+
+.contenedor-menu{
+	position: relative;
+	height: 100vh;
+	width: 220px;
+	background-color: #030b19;
+	color: #FFFFFF;
+	font-size: 17px;
+}
+
+.contenedor-menu a{
+	color: #FFFFFF;
+	font-size: 17px;
+	font-weight: 400;
+}
+
+.contenedor-menu ul li{
+	display: flex;
+	padding: 20px;
+	border-bottom: 0.2px solid rgba(242,244,244,0.2);
+}
+
+.contenedor-menu ul li:nth-child(1){
+	padding: 30px 20px;
+}
+
+.contenedor-menu ul li:hover:nth-child(n+2){
+	padding-left: 40px;
+	cursor: pointer;
+}
+
+.logo-escom-menu{
+	width: 100px;
+	margin-right: 10px;
+}
+
+
+.op-cerrar-sesion{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	font-size: 15px !important;
+}
