@@ -9,6 +9,7 @@ body{
 	width: 100%;
 	height: 100vh;
 	background-color: #F2F4F4;
+	overflow: hidden;
 }
 
 .contenedor-slider img{
@@ -27,6 +28,7 @@ body{
 	background-color: #030b19;
 	text-align: center;
 	color: #FFFFFF;
+	overflow: hidden;
 }
 
 .logo-escom-80{
