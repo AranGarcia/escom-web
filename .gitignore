@@ -1,2 +1,5 @@
 # Directorio para pruebas
 tests/
+
+# IDE Configuration
+.vscode/

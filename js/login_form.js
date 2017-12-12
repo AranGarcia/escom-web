@@ -11,6 +11,7 @@ $(document).ready(function(e){
             cache: false,
             // Repuesta con éxito
             success: function(resp){
+                alert(resp);
                 /* 
                 RESPUESTAS:
                 0 : Usuario iniciado con éxito

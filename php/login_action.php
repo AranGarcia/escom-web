@@ -1,32 +1,19 @@
 <?php
-session_start();
-
-$configs = include('config.php');
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+session_start();
     
-    // Configuracion de conexion a BD
-$dbhost = $configs["db"]["host"];
-$dbname = $configs["db"]["name"];
-$dbuser = $configs["db"]["user"];
-$dbpassw = $configs["db"]["passw"];
-
-$dbconn = pg_connect("host=" . $dbhost . " dbname=" . $dbname . " user=" . $dbuser . " password=" . $dbpassw)
-    or die("Could not connect" . pg_last_error());
+include("utils.php");
+$configs = include('config.php');
 
     // Información del POST
 $usuario = $_POST["boleta"];
 $contrasena = $_POST["contrasena"];
     
-    // Ejecuta query
-$query = "SELECT nom_usuario, contrasena, rol_usuario, activo, num_intentos 
-    FROM usuario WHERE nom_usuario = '" . $usuario . "' AND rol_usuario = 'alumno';";
-$result = pg_query($query) or die("Query failed: " . pg_last_error());
+// Extraccion de campo nom_usuario y contrasena
+$user_array = obtenerInfoUsuario($usuario);
     
-    // Extraccion de campo nom_usuario y contrasena
-$user_array = pg_fetch_array($result, NULL, PGSQL_ASSOC);
 // Usuario bloqueado
 if ($user_array["activo"] == "f") {
     echo 1;
@@ -36,8 +23,7 @@ else if ($user_array["contrasena"] == $contrasena) {
     $update_query = "UPDATE usuario SET num_intentos = 0 WHERE nom_usuario = '" . $usuario . "';";
     pg_query($update_query) or die("Query failed: " . pg_last_error());
 
-    $_SESSION["usuario_activo"] = $user_array["nom_usuario"];
-    $_SESSION["usuario_tipo"] = $user_array["rol_usuario"];
+    setAlumnoSession($user_array);
     echo 0;
 } else {
     // Limite de intentos de acceso alcanzado

@@ -1,10 +1,10 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
+
 $configs = include('php/config.php');
 
 if (isset($_SESSION["usuario_activo"])) {
@@ -52,5 +52,8 @@ if (isset($_SESSION["usuario_activo"])) {
             <a href="#">No puedo acceder a mi cuenta</a>
         </div>
     </div>
+    <p><?php
+        echo var_dump($_SESSION);
+        ?></p>
 </body>
 </html>

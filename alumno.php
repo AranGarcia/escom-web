@@ -3,6 +3,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+include("php/utils.php");
 $configs = include("php/config.php");
 session_start();
 
@@ -14,15 +15,17 @@ if (!isset($_SESSION["usuario_activo"])) {
 
 // De igual manera si no es administrador
 else if ($_SESSION["usuario_tipo"] != "alumno") {
-    unset($_SESSION["usuario_activo"]);
-    unset($_SESSION["usuario_tipo"]);
+    unsetSession();
     header("Location: " . $configs["urls"][base]);
     exit();
 }
 
 // Inicialización de variables
-$user_name = $_SESSION["usuario_activo"];
+$user_name = $_SESSION["usuario_nombre"];
 $logout_ref = $configs["urls"]["logout"];
+
+// Ceremonias a las que está invitado el alumno
+$ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
 ?>
 
 <!DOCTYPE html>
@@ -40,13 +43,25 @@ $logout_ref = $configs["urls"]["logout"];
         <ul>
             <li>
                 <img class="logo-escom-menu" src="img/logo_escom_blanco.svg">
-                Bienvenido, <?php $user_name?>
+                Bienvenido, <?php echo $user_name?>
             </li>
             <li><a id="tab-invitacion">Invitaci&oacute;n</a></li>
-            <li><a id="tab-invitacion">Anuario</a></li>
+            <!-- Si está invitado a la ceremonia de generacion puede ver el anuario -->
+            <?php
+            if(in_array("generacion", $ceremonias)){
+                echo "<li><a id=\"tab-invitacion\">Anuario</a></li>";
+            }
+            ?>
             <li><a id="tab-invitacion">Perfil</a></li>
         </ul>
         <a href="<?php echo $logout_ref?>" class="op-cerrar-sesion">Cerrar sesi&oacute;n</a>
     </div>
+
+    <p><?php
+        echo "\n-------------------\n";
+        echo var_dump($_SESSION);
+        echo "\n-------------------\n";
+        echo var_dump($ceremonias);
+    ?></p>
 </body>
 </html>
