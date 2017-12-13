@@ -16,7 +16,7 @@ body{
 }
 
 .contenedor-menu a{
-	color: #dbdbdb;
+	color: #c6c6c6;
 	font-size: 17px;
 	font-weight: 400;
 	width: 100%;
@@ -77,7 +77,8 @@ body{
 
 /*Texto introductorio (Has sido invitado a)*/
 .contenedor-secciones #seccion-tab-invitacion > p,
-.contenedor-secciones #seccion-tab-anuario > p{
+.contenedor-secciones #seccion-tab-anuario > p,
+.contenedor-secciones #seccion-tab-perfil > p{
 	font-weight: 400;
 	color: #000000;
 	opacity: 0.7;
@@ -112,17 +113,20 @@ body{
 	width: 100%;
 }
 
+
 /*SECCION ANUARIO*/
+/*Estilos del contenedor*/
 .contenedor-fotos-anuario{
 	position: relative;
 	width: 100%;
 	max-width: 1000px;
-	margin: 20px auto 60px;
+	margin: 20px auto 80px;
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .contenedor-boton-foto{
+	position: relative;
 	width: 30%;
 	height: 300px;
 	margin-right: 5%;
@@ -131,4 +135,109 @@ body{
 
 .contenedor-boton-foto:nth-child(3n){
 	margin-right: 0;
+}
+
+.contenedor-boton-foto p{
+	color: #7ebeed;
+	font-weight: 400;
+	-webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
+
+/*Estilos del boton*/
+.boton-foto{
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.boton-foto span{
+	padding: 0 0 10px 0;
+	color: #7ebeed;
+	font-size: 60px;
+}
+
+.boton-foto:hover{
+	opacity: 0.6;
+}
+
+.eliminar-foto{
+	position: absolute;
+	color: #ce134d !important;
+	bottom: -30px;
+	left: 10px;
+	cursor: pointer;
+	font-size: 15px;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.eliminar-foto:hover{
+	opacity: 0.6;
+}
+
+/*INPUT DE LA FRASE*/
+#frase{
+	margin-top: 20px;
+	max-width: 1000px;
+	color: #000000;
+	border-bottom: 2px solid #0089ef;
+}
+
+/*Estilo de la imagen*/
+.contenedor-boton-foto img{
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+/*SECCION PERFIL*/
+/*Datos del alumno*/
+.etiqueta-datos-perfil{
+	font-weight: 400;
+	color: #000000;
+	opacity: 1 !important;
+	width: 100%;
+	max-width: 1000px;
+	margin: 20px auto 6px !important;
+}
+
+.contenedor-datos-usuario{
+	background-color: #e2e2e2;
+	border-bottom: 2px solid #0089ef;
+	font-weight: 300 !important;
+	opacity: 1 !important;
+	padding: 6px 12px;
+	-webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none;
+}
+
+.a-datos-incorrectos{
+	max-width: 1000px;
+	margin: 20px auto 0;
+}
+
+/*Inputs del form para cambio de contraseña*/
+#form_cambiar_contrasena{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#form_cambiar_contrasena input{
+	color: #000000 !important;
+	margin: 0 0 20px;
+	border-bottom: 2px solid #0089ef;
 }

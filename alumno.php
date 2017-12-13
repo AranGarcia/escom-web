@@ -34,7 +34,8 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/master.css">
     <link rel="stylesheet" type="text/css" href="css/alumno.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet">
+    <link href="fonts/iconos-sseis/iconos-sseis.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
     <title>Inicio</title>
@@ -75,7 +76,7 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
                         <p>Fecha: 08/Diciembre/2017</p>
                         <p>Hora: 17:30</p>
                         <p>Lugar: Auditorio A “Ing. Alejo Peralta” del Centro Cultural Jaime Torres Bodet</p>
-                        <button>Descargar invitaci&oacute;n</button>
+                        <button><span class=\"icon-pdf-3\"></span>Descargar invitaci&oacute;n</button>
                     </div>
                     <!--Este es el mapa de la ubicación del lugar donde se organiza cada evento-->
                     <div class=\"contenedor-mitad\">
@@ -94,7 +95,7 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
                         <p>Fecha: 08/Diciembre/2017</p>
                         <p>Hora: 17:30</p>
                         <p>Lugar: Auditorio A “Ing. Alejo Peralta” del Centro Cultural Jaime Torres Bodet</p>
-                        <button>Descargar invitaci&oacute;n</button>
+                        <button><span class=\"icon-pdf-3\"></span>Descargar invitaci&oacute;n</button>
                     </div>
                     <!--Este es el mapa de la ubicación del lugar donde se organiza cada evento-->
                     <div class=\"contenedor-mitad\">
@@ -115,21 +116,62 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
                 <!--El usuario deberia dar click y poder cargar una foto que se visualizaría en el mismo contenedor-->
                 <!--FOTO 1 (Sugiero 3 fotos)-->
                 <div class="contenedor-boton-foto">
+                    <div class="boton-foto centrar-verticalmente">
+                        <span class="icon-plus-circle-1"></span>
+                        <p>Subir foto</p>
+                    </div>
                     <!--aquí debería verse la foto-->
+                    <p class="eliminar-foto" id="eliminar-foto-1">Eliminar</p>
                 </div>
                 <!--FOTO 2-->
                 <div class="contenedor-boton-foto">
+                    <div class="boton-foto centrar-verticalmente">
+                        <span class="icon-plus-circle-1"></span>
+                        <p>Subir foto</p>
+                    </div>
                     <!--aquí debería verse la foto-->
+                    <p class="eliminar-foto" id="eliminar-foto-2">Eliminar</p>
                 </div>
                 <!--FOTO 3-->
                 <div class="contenedor-boton-foto">
-                    <!--aquí debería verse la foto-->
+                    <div class="boton-foto centrar-verticalmente">
+                        <span class="icon-plus-circle-1"></span>
+                        <p>Subir foto</p>
+                    </div>
+                    <!--aquí debería verse la foto
+                    <img class="logo-escom-menu" src="img/slider-index/01-ceremonia.jpg">-->
+                    <!--la opcion de eliminar funciona cuando hay foto-->
+                    <p class="eliminar-foto" id="eliminar-foto-3">Eliminar</p>
                 </div>
             </div>
+
+            <!--Frase introductoria-->
+            <p>Mensaje, la frase que te define o tu cita favorita</p>
+            <input type="text" name="La frase de tu anuario" id="frase" placeholder="Escribe aquí">
         </div>
 
-        <!--Aquí está todo lo referente al perfil-->
-        <div id="seccion-tab-perfil"></div>
+        <!--Aquí está todo lo referente al Perfil de usuario-->
+        <div id="seccion-tab-perfil">
+            <p>Tus datos</p>
+            <p class="etiqueta-datos-perfil">Nombre</p>
+            <p class="contenedor-datos-usuario">Linus</p> <!--Se jala de la base-->
+            <p class="etiqueta-datos-perfil">Apellido paterno</p>
+            <p class="contenedor-datos-usuario">Brown</p> <!--Se jala de la base-->
+            <p class="etiqueta-datos-perfil">Apellido materno</p>
+            <p class="contenedor-datos-usuario">Sanchez</p> <!--Se jala de la base-->
+            <div class="a-datos-incorrectos">
+                <a href="#">Mis datos están incorrectos</a>
+            </div>
+
+            <p style="margin: 60px auto 20px ">Cambio de contrase&ntilde;a</p>
+            <form id="form_cambiar_contrasena">
+                <label for="contrasena">Contrase&ntilde;a actual</label>
+                <input type="password" name="contrasena" id="contrasena" placeholder="Contrase&ntilde;a actual">
+                <label for="nueva_contrasena">Nueva contrase&ntilde;a</label>
+                <input type="password" name="nueva_contrasena" id="nueva_contrasena" placeholder="Nueva contrase&ntilde;a">
+                <button type="submit">Cambiar contrase&ntilde;a</button>
+            </form>
+        </div>
     </div>
 
     <p><?php
