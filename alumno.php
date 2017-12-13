@@ -48,14 +48,14 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
                 <img class="logo-escom-menu" src="img/logo_escom_blanco.svg">
                 Bienvenido, <?php echo $user_name ?>
             </li>
-            <li><a id="tab-invitacion">Invitaci&oacute;n</a></li>
+            <li><a id="tab-invitacion"><span class="icon-invitacion"></span>Invitaci&oacute;n</a></li>
             <!-- Si está invitado a la ceremonia de generacion puede ver el anuario -->
             <?php
             if (in_array("generacion", $ceremonias)) {
-                echo "<li><a id=\"tab-anuario\">Anuario</a></li>";
+                echo "<li><a id=\"tab-anuario\"><span class=\"icon-anuario\"></span>Anuario</a></li>";
             }
             ?>
-            <li><a id="tab-perfil">Perfil</a></li>
+            <li><a id="tab-perfil"><span class="icon-usuario"></span>Perfil</a></li>
         </ul>
         <a href="<?php echo $logout_ref ?>" class="op-cerrar-sesion">Cerrar sesi&oacute;n</a>
     </div>
@@ -147,7 +147,11 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
 
             <!--Frase introductoria-->
             <p>Mensaje, la frase que te define o tu cita favorita</p>
-            <input type="text" name="La frase de tu anuario" id="frase" placeholder="Escribe aquí">
+            <!--Esta frase si se guarda en la base de datos-->
+            <form class="forms-perfil" id="form_frase">
+                <input type="text" name="Frase para el anuario" id="frase" placeholder="Escribe aquí">
+                <button type="submit">Guardar frase</button>
+            </form>
         </div>
 
         <!--Aquí está todo lo referente al Perfil de usuario-->
@@ -164,7 +168,7 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
             </div>
 
             <p style="margin: 60px auto 20px ">Cambio de contrase&ntilde;a</p>
-            <form id="form_cambiar_contrasena">
+            <form class="forms-perfil" id="form_cambiar_contrasena">
                 <label for="contrasena">Contrase&ntilde;a actual</label>
                 <input type="password" name="contrasena" id="contrasena" placeholder="Contrase&ntilde;a actual">
                 <label for="nueva_contrasena">Nueva contrase&ntilde;a</label>
