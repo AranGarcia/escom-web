@@ -6,11 +6,21 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Excelencia_invitacion</title>
+    <title>Invitacion</title>
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" type="text/css" href="css/master-admin.css">
+    <link rel="stylesheet" href="css/materialize.min.css">              <!-- MATERIALIZE -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet"> 
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/materialize.min.js"></script>                       <!-- MATERIALIZE -->
+    <script src="js/materialize.js"></script>                           <!-- MATERIALIZE -->
+    <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
 </head>
 <body>
-    <h1>Invitacion</h1>
-    <p>Direccion</p>
+    <div class="card-panel black">
+        <p class="white-text">Informacion de la invitacion</p>
+    </div>
+    <p class="black-text">Direccion</p>
     <form id="direccion">
         <label>Ciudad: </label>
         <input type="text" id="ciudad">
@@ -40,12 +50,12 @@
         <input type="text" id="referencia">
         <br> <br>
     <!-- * * * * * * * * * * * * * * * * * * -->
-    <p>Acompaniantes</p>
+    <p class="black-text">Acompaniantes</p>
         <label>No. maximo de acompaniantes: </label>
         <input type="text" id="acompaniantes">
         <br> <br>
     <!-- * * * * * * * * * * * * * * * * * * -->
-        <button type="submit">Actualizar invitacion</button>
+        <button type="submit" class="btn waves-effect teal">Actualizar invitacion</button>
     </form>
 </body>
 </html>
