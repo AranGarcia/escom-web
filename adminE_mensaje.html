@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Informacion de alumnos de excelencia</title>
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" type="text/css" href="css/master-admin.css">
+    <link rel="stylesheet" href="css/materialize.min.css">              <!-- MATERIALIZE -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet"> 
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/materialize.min.js"></script>                       <!-- MATERIALIZE -->
+    <script src="js/materialize.js"></script>                           <!-- MATERIALIZE -->
+    <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
 </head>
 <body>
-    <h1>Mensaje de utltima hora</h1>
+    <div class="card-panel black">
+        <p class="white-text">Mensaje de ultima hora</p>
+    </div>
     <form id="caja-mensaje">
-        <label>Introduce el mensaje que desee comunicar: </label><br>
-        <input type="text" id="mensaje"><br>
-        <button type="submit" >Enviar mensaje</button>
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Introduce el mensaje</label>
+            </div>
+        <button type="submit" class="btn waves-effect teal">Enviar mensaje</button>
     </form>
 </body>
 </html>

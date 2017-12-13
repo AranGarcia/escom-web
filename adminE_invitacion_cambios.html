@@ -1,0 +1,75 @@
+<!--    
+    PAGINA PARA INGRESAR Y/O MODIFICAR LA DIRECCION DEL EVENTO
+    USUSARIO(S): ADMINISTRADOR
+-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invitacion</title>
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" type="text/css" href="css/master-admin.css">
+    <link rel="stylesheet" href="css/materialize.min.css">              <!-- MATERIALIZE -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet"> 
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/materialize.min.js"></script>                       <!-- MATERIALIZE -->
+    <script src="js/materialize.js"></script>                           <!-- MATERIALIZE -->
+    <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
+</head>
+<body>
+    <div class="card-panel black">
+        <p class="white-text">Informacion de la invitacion</p>
+    </div>
+    <p class="black-text">Direccion</p>
+    <form id="direccion">
+        <label>Ciudad: </label>
+        <input type="text" id="ciudad">
+        <br> <br> 
+        <label>Delegacion: </label>
+        <input type="text" id="delegacion">
+    <!-- * * * * * * * * * * * * * * * * * * -->
+        <br> <br> 
+        <label>Calle: </label>
+        <input type="text" id="calle">
+        <br> <br> 
+        <label>Colonia: </label>
+        <input type="text" id="colonia">
+    <!-- * * * * * * * * * * * * * * * * * * -->
+        <br> <br>
+        <label>No. exterior: </label>
+        <input type="text" id="no_ext">
+        <br> <br> 
+        <label>No. interior: </label>
+        <input type="text" id="no_int">
+        <br> <br> 
+        <label>Codigo Postal: </label>
+        <input type="text" id="c_p">
+    <!-- * * * * * * * * * * * * * * * * * * -->
+        <br> <br>
+        <label>Otra referencia: </label>
+        <input type="text" id="referencia">
+        <br> <br>
+    <!-- * * * * * * * * * * * * * * * * * * -->
+    <p class="black-text">Fecha</p>
+    <label>Dia: </label>
+    <input type="text" id="dia"><br>
+    <label>Mes: </label>
+    <input type="text" id="mes"><br>
+    <label>Anio: </label>
+    <input type="text" id="anio"><br>
+    <br><br>
+    <!-- * * * * * * * * * * * * * * * * * * -->
+    <p class="black-text">Hora</p>
+    <label>Hora: </label>
+    <input type="text" id="hora"><br>
+    <!-- * * * * * * * * * * * * * * * * * * -->
+    <p class="black-text">Acompaniantes</p>
+        <label>No. maximo de acompaniantes: </label>
+        <input type="text" id="acompaniantes">
+        <br> <br>
+    <!-- * * * * * * * * * * * * * * * * * * -->
+    
+        <button type="submit" class="btn waves-effect teal">Actualizar invitacion</button>
+    </form>
+</body>
+</html>

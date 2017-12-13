@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Informacion de los alumnos</title>
-    
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <link rel="stylesheet" type="text/css" href="css/master-admin.css">
+    <link rel="stylesheet" href="css/materialize.min.css">              <!-- MATERIALIZE -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet"> 
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/materialize.min.js"></script>                       <!-- MATERIALIZE -->
+    <script src="js/materialize.js"></script>                           <!-- MATERIALIZE -->
+    <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
 </head>
 <body>
-    <h1>Alumnos</h1>
+    <div class="card-panel teal black">
+        <p class="white-text">Alumnos</p>
+    </div>
     <frame id="info-alumnos">
         <label>Boleta: </label><br>
         <input type="text" id="boleta">
-        <button type="submit">Buscar</button>
+        <button type="submit" class="btn waves-effect teal">Buscar</button>
         <br><br>
     <!--* * * * * * * * * * * * * * * * * * * * *-->
+        <label></label><br>                         <!-- LABEL AUXILIAR PARA QUE NO SE VEAN TAN JUNTOS -->
         <label>Nombre: </label>
         <input type="text" id="nombre-alumno"><br><br>
         <label>Apellido paterno: </label>
@@ -21,7 +31,7 @@
         <input type="text" id="amaterno-alumno"><br><br>
         <br>
     <!--* * * * * * * * * * * * * * * * * * * * *-->
-        <button type="submit">Guardar informacion</button>
+        <button type="submit" class="btn waves-effect teal">Guardar informacion</button>
     </frame>
 </body>
 </html>
