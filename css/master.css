@@ -58,6 +58,10 @@ p{
 	font-weight: 300;
 }
 
+span{
+	padding-right: 10px;
+}
+
 /*FORMATO DE LAS ETIQUETAS DEL FORM*/
 input{
 	display: block;
