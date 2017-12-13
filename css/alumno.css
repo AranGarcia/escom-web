@@ -231,13 +231,13 @@ body{
 }
 
 /*Inputs del form para cambio de contraseña*/
-#form_cambiar_contrasena{
-	max-width: 1000px;
-	margin: 0 auto;
-}
-
 #form_cambiar_contrasena input{
 	color: #000000 !important;
 	margin: 0 0 20px;
 	border-bottom: 2px solid #0089ef;
+}
+
+.forms-perfil{
+	max-width: 1000px;
+	margin: 0 auto;
 }
