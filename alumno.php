@@ -42,9 +42,15 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
     <script src="js/cambio_passw.js"></script>
     <script src="js/upload_img.js"></script>
     <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
+    <script type="text/javascript" src="js/menu-responsive-script.js"></script>
     <title>Inicio</title>
 </head>
 <body>
+    <!--menu responsive-->
+    <div id="menu-responsive">
+        <p id="btn-menu"><span class="icon-menu"></span></p>
+    </div>
+
     <!--menu lateral-->
     <div class="contenedor-menu">
         <ul>

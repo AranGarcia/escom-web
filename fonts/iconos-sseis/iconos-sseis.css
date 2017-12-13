@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconos-sseis';
-  src:  url('iconos-sseis.eot?1qpb6j');
-  src:  url('iconos-sseis.eot?1qpb6j#iefix') format('embedded-opentype'),
-    url('iconos-sseis.ttf?1qpb6j') format('truetype'),
-    url('iconos-sseis.woff?1qpb6j') format('woff'),
-    url('iconos-sseis.svg?1qpb6j#iconos-sseis') format('svg');
+  src:  url('iconos-sseis.eot?yrar4i');
+  src:  url('iconos-sseis.eot?yrar4i#iefix') format('embedded-opentype'),
+    url('iconos-sseis.ttf?yrar4i') format('truetype'),
+    url('iconos-sseis.woff?yrar4i') format('woff'),
+    url('iconos-sseis.svg?yrar4i#iconos-sseis') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu:before {
+  content: "\e903";
+}
 .icon-anuario:before {
   content: "\e905";
 }

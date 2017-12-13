@@ -114,6 +114,38 @@ button:hover{
 	width: 50%;
 }
 
-.contenedor-mitad-inv{
-	width: 100%;
+#menu-responsive{
+	display: none;
+	position: relative;
+}
+
+.noscroll{
+	overflow: hidden;
+}
+
+@media screen and (max-width:860px){
+	#menu-responsive{
+		cursor: pointer;
+		display:block;
+		color: white;
+		background-color: #030b19;
+		width: 100%;
+	}
+	#btn-menu{
+		display: block;
+		padding: 11px 17px;
+		font-size: 21px;
+	}
+
+	.contenedor-menu{
+		width: 80%;
+		height: 100%;
+		left: -100%;
+		z-index: 1001;
+	}
+
+	.contenedor-secciones{
+		width: 100% !important;
+		padding: 40px 40px 0 !important;
+	}
 }
