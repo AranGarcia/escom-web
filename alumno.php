@@ -44,6 +44,11 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
     <title>Inicio</title>
 </head>
 <body>
+    <!--menu responsive-->
+    <div id="menu-responsive">
+        <p id="btn-menu"><span class="icon-menu"></span></p>
+    </div>
+
     <!--menu lateral-->
     <div class="contenedor-menu">
         <ul>
