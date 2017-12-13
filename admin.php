@@ -37,8 +37,10 @@ $logout_ref = $configs["urls"]["logout"];
     echo "<h1>Bienvenido $user_name</h1>";
     ?>
 
+    <button type="submit">Alumnos de excelencia</button>
+    <button type="submit">Alumnos de generacion</button>
+
     <ul>
-        <li><a href="">Crear invitacion</a></li>
         <li><a href="<?php echo $logout_ref?>">Cerrar sesi&oacute;n</a></li>
     </ul>
 </body>
