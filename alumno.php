@@ -80,7 +80,7 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
                         <p>Fecha: 08/Diciembre/2017</p>
                         <p>Hora: 17:30</p>
                         <p>Lugar: Auditorio A “Ing. Alejo Peralta” del Centro Cultural Jaime Torres Bodet</p>
-                        <button><span class=\"icon-pdf-3\"></span>Descargar invitaci&oacute;n</button>
+                        <button type=\"button\" onclick=\"location.href='inv_gen.php';\"><span class=\"icon-pdf-3\"></span>Descargar invitaci&oacute;n</button>
                     </div>
                     <!--Este es el mapa de la ubicación del lugar donde se organiza cada evento-->
                     <div class=\"contenedor-mitad\">
@@ -99,7 +99,7 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
                         <p>Fecha: 08/Diciembre/2017</p>
                         <p>Hora: 17:30</p>
                         <p>Lugar: Auditorio A “Ing. Alejo Peralta” del Centro Cultural Jaime Torres Bodet</p>
-                        <button><span class=\"icon-pdf-3\"></span>Descargar invitaci&oacute;n</button>
+                        <button type=\"button\" onclick=\"location.href='inv_exc.php';\"><span class=\"icon-pdf-3\"></span>Descargar invitaci&oacute;n</button>
                     </div>
                     <!--Este es el mapa de la ubicación del lugar donde se organiza cada evento-->
                     <div class=\"contenedor-mitad\">
