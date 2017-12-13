@@ -23,6 +23,10 @@ function leerHojaDeCalculo()
     }
 
     $dbconn = connectDB();
+    if (!$dbconn) {
+        return;
+    }
+
     $query_insert = "INSERT INTO usuario VALUES ('";
 
     foreach ($alumnos as $alumno) {
@@ -55,8 +59,8 @@ function obtenerInfoUsuario($clave)
 {
     $dbconn = connectDB();
 
-    $query = "SELECT nom_usuario, nom, email, contrasena, rol_usuario, activo, num_intentos 
-        FROM usuario WHERE nom_usuario = '" . $clave . "' AND rol_usuario = 'alumno';";
+    $query = "SELECT cve, nom, ap, am, email, contrasena, rol_usuario, activo, num_intentos 
+        FROM usuario WHERE cve = '" . $clave . "' AND rol_usuario = 'alumno';";
     $result = pg_query($query) or die("Query failed: " . pg_last_error());
     return pg_fetch_array($result, NULL, PGSQL_ASSOC);
 }
@@ -94,9 +98,11 @@ Establece la sesion con los valores del origen de datos:
  */
 function setAlumnoSession($user_array)
 {
-    $_SESSION["usuario_activo"] = $user_array["nom_usuario"];
+    $_SESSION["usuario_activo"] = $user_array["cve"];
     $_SESSION["usuario_tipo"] = $user_array["rol_usuario"];
     $_SESSION["usuario_nombre"] = $user_array["nom"];
+    $_SESSION["usuario_ap_pat"] = $user_array["ap"];
+    $_SESSION["usuario_ap_mat"] = $user_array["am"];
     $_SESSION["usuario_email"] = $user_array["email"];
 }
 
@@ -108,6 +114,35 @@ function unsetAlumnoSession()
     unset($_SESSION["usuario_email"]);
 }
 
+/* 
+Cambia la contraseña de un usuario
+- Clave de usuario / Boleta de alumno
+- Password anterior
+- Password nueva
+ */
+function cambiarPassword($cve_usu, $passw_ant, $passw_nueva)
+{
+    $dbconn = connectDB();
+
+    $query = "SELECT COUNT(*) FROM usuario WHERE " .
+        "cve = '" . $cve_usu . "' and contrasena = '" . $passw_ant . "'";
+
+    $result = pg_query($query);
+    $r = pg_fetch_array($result);
+    if ($r["count"] == 0) {
+        return false;
+    }
+
+    $update_query = "UPDATE usuario SET contrasena = '" . $passw_nueva ."'" .
+        "WHERE cve = '" . $cve_usu . "'";
+
+    $result = pg_query($update_query);
+
+    return true;
+}
+/* 
+Conecta a la base de datos especificada por la configuracion
+ */
 function connectDB()
 {
     $configs = include("config.php");

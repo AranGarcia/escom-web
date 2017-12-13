@@ -20,7 +20,7 @@ if ($user_array["activo"] == "f") {
 }
 // Acceso correcto 
 else if ($user_array["contrasena"] == $contrasena) {
-    $update_query = "UPDATE usuario SET num_intentos = 0 WHERE nom_usuario = '" . $usuario . "';";
+    $update_query = "UPDATE usuario SET num_intentos = 0 WHERE cve = '" . $usuario . "';";
     pg_query($update_query) or die("Query failed: " . pg_last_error());
 
     setAlumnoSession($user_array);
@@ -34,7 +34,7 @@ else if ($user_array["contrasena"] == $contrasena) {
     }
     // Usuario y/o Contraseña incorrecta
     else {
-        $update_query = "UPDATE usuario SET num_intentos = num_intentos + 1 WHERE nom_usuario = '" . $usuario . "';";
+        $update_query = "UPDATE usuario SET num_intentos = num_intentos + 1 WHERE cve = '" . $usuario . "';";
         pg_query($update_query) or die("Query failed: " . pg_last_error());
         echo 2;
     }

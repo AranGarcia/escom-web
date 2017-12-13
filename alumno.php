@@ -22,6 +22,8 @@ else if ($_SESSION["usuario_tipo"] != "alumno") {
 
 // Inicialización de variables
 $user_name = $_SESSION["usuario_nombre"];
+$user_ap = $_SESSION["usuario_ap_pat"];
+$user_am = $_SESSION["usuario_ap_mat"];
 $logout_ref = $configs["urls"]["logout"];
 
 // Ceremonias a las que está invitado el alumno
@@ -37,6 +39,7 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&amp;subset=latin-ext" rel="stylesheet">
     <link href="fonts/iconos-sseis/iconos-sseis.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/cambio_passw.js"></script>
     <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
     <title>Inicio</title>
 </head>
@@ -158,11 +161,11 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
         <div id="seccion-tab-perfil">
             <p>Tus datos</p>
             <p class="etiqueta-datos-perfil">Nombre</p>
-            <p class="contenedor-datos-usuario">Linus</p> <!--Se jala de la base-->
+            <p class="contenedor-datos-usuario"><?php echo $user_name?></p> <!--Se jala de la base-->
             <p class="etiqueta-datos-perfil">Apellido paterno</p>
-            <p class="contenedor-datos-usuario">Brown</p> <!--Se jala de la base-->
+            <p class="contenedor-datos-usuario"><?php echo $user_ap?></p> <!--Se jala de la base-->
             <p class="etiqueta-datos-perfil">Apellido materno</p>
-            <p class="contenedor-datos-usuario">Sanchez</p> <!--Se jala de la base-->
+            <p class="contenedor-datos-usuario"><?php echo $user_am?></p> <!--Se jala de la base-->
             <div class="a-datos-incorrectos">
                 <a href="#">Mis datos están incorrectos</a>
             </div>
@@ -170,9 +173,9 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
             <p style="margin: 60px auto 20px ">Cambio de contrase&ntilde;a</p>
             <form class="forms-perfil" id="form_cambiar_contrasena">
                 <label for="contrasena">Contrase&ntilde;a actual</label>
-                <input type="password" name="contrasena" id="contrasena" placeholder="Contrase&ntilde;a actual">
+                <input type="password" name="passw" id="contrasena" placeholder="Contrase&ntilde;a actual" >
                 <label for="nueva_contrasena">Nueva contrase&ntilde;a</label>
-                <input type="password" name="nueva_contrasena" id="nueva_contrasena" placeholder="Nueva contrase&ntilde;a">
+                <input type="password" name="old_passw" id="nueva_contrasena" placeholder="Nueva contrase&ntilde;a" >
                 <button type="submit">Cambiar contrase&ntilde;a</button>
             </form>
         </div>
