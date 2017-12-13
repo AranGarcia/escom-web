@@ -1,3 +1,25 @@
+<?php
+$configs = include("php/config.php");
+session_start();
+
+if (!isset($_SESSION["usuario_activo"])) {
+    header("Location: " . $configs["urls"]["base"]);
+    exit();
+}
+
+// De igual manera si no es administrador
+else if ($_SESSION["usuario_tipo"] != "admin") {
+    unset($_SESSION["usuario_activo"]);
+    unset($_SESSION["usuario_tipo"]);
+    header("Location: " . $configs["urls"]["base"]);
+    exit();
+}
+
+// Inicialización de variables
+$user_name = $_SESSION["usuario_activo"];
+$logout_ref = $configs["urls"]["logout"];
+?>
+
 <!-- 
     PAGINA PRINCIPAL PARA GESTIONAR EL EVENTO DE ALUMNOS DE EXCELENCIA
     USUARIO(S): ADMINISTRADOR

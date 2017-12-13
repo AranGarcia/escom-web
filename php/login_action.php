@@ -8,7 +8,7 @@ include("utils.php");
 $configs = include('config.php');
 
     // Información del POST
-$usuario = $_POST["boleta"];
+$usuario = $_POST["cve"];
 $contrasena = $_POST["contrasena"];
     
 // Extraccion de campo nom_usuario y contrasena
@@ -23,8 +23,14 @@ else if ($user_array["contrasena"] == $contrasena) {
     $update_query = "UPDATE usuario SET num_intentos = 0 WHERE cve = '" . $usuario . "';";
     pg_query($update_query) or die("Query failed: " . pg_last_error());
 
+    // Si un administrador inició sesión
     setAlumnoSession($user_array);
-    echo 0;
+    if($_SESSION["usuario_tipo"] == "admin"){
+        echo 3;
+    }
+    else{
+        echo 0;
+    }
 } else {
     // Limite de intentos de acceso alcanzado
     if ($user_array["num_intentos"] > 4) {

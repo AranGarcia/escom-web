@@ -43,7 +43,7 @@ if (isset($_SESSION["usuario_activo"])) {
             <!-- Formulario -->
             <form id="form_login">
                 <label for="boleta">Boleta</label>
-                <input type="text" name="boleta" id="boleta" placeholder="N&uacute;mero de boleta">
+                <input type="text" name="cve" id="boleta" placeholder="N&uacute;mero de boleta">
                 <label for="contrasena">Contrase&ntilde;a</label>
                 <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña">
                 <button type="submit">Iniciar Sesi&oacute;n</button>

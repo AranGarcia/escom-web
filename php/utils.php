@@ -60,7 +60,7 @@ function obtenerInfoUsuario($clave)
     $dbconn = connectDB();
 
     $query = "SELECT cve, nom, ap, am, email, contrasena, rol_usuario, activo, num_intentos 
-        FROM usuario WHERE cve = '" . $clave . "' AND rol_usuario = 'alumno';";
+        FROM usuario WHERE cve = '" . $clave . "';";
     $result = pg_query($query) or die("Query failed: " . pg_last_error());
     return pg_fetch_array($result, NULL, PGSQL_ASSOC);
 }
@@ -106,11 +106,13 @@ function setAlumnoSession($user_array)
     $_SESSION["usuario_email"] = $user_array["email"];
 }
 
-function unsetAlumnoSession()
+function unsetSession()
 {
     unset($_SESSION["usuario_activo"]);
     unset($_SESSION["usuario_tipo"]);
     unset($_SESSION["usuario_nombre"]);
+    unset($_SESSION["usuario_ap_pat"]);
+    unset($_SESSION["usuario_ap_mat"]);
     unset($_SESSION["usuario_email"]);
 }
 
