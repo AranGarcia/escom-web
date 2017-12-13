@@ -30,8 +30,7 @@ $user_am = $_SESSION["usuario_ap_mat"];
 	<h1>Entrega de Diplomas de Generaci&oacute;n</h1>
 	<h2>Ing. en Sistemas Computacionales</h2>
 	<h2>2013 - 2017</h2>
-	<p>Se Otorga la Intitaci&oacute;n A:</p>
-	<h2><?php echo $user_name?> <?php echo $user_ap?> <?php echo $user_am?></h2> <!--SALE DE LA BASE-->
+	
 	<h4>8 de Diciembre de 2017</h4> <!--SALE DE LA BASE-->
 	<h4>17:30</h4> <!--SALE DE LA BASE-->
 </body>
