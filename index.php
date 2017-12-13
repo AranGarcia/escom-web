@@ -52,8 +52,5 @@ if (isset($_SESSION["usuario_activo"])) {
             <a href="#">No puedo acceder a mi cuenta</a>
         </div>
     </div>
-    <p><?php
-        echo var_dump($_SESSION);
-        ?></p>
 </body>
 </html>

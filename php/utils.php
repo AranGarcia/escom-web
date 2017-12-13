@@ -3,17 +3,25 @@ function crearInvitacion($nombre)
 {
         //  TODO 
 }
-
+/* 
+Agrega alumnos a la base de datos desde una hoja de calculos
+ */
 function leerHojaDeCalculo()
 {
-        // TODO
+    $configs = include("../php/config.php");
+    include($configs["plugins"]["excel_reader"]);
+
+    $excel = new PhpExcelReader;
+
+    $excel->read($configs["path"]["docs"] . "alumnos.xls");
+    $alumnos = array_slice($excel->sheets[0]["cells"], 1);
 }
 
 /* 
 obtenerInfoUsuario -> usuario[...]
 
 Accede al origen de datos para obtener información del usuario.
-*/
+ */
 function obtenerInfoUsuario($clave)
 {
     $configs = include("config.php");
@@ -62,15 +70,17 @@ Establece la sesion con los valores del origen de datos:
 - Rol
 - Primer nombre
 - Correo electrónico
-*/
-function setAlumnoSession($user_array){
+ */
+function setAlumnoSession($user_array)
+{
     $_SESSION["usuario_activo"] = $user_array["nom_usuario"];
     $_SESSION["usuario_tipo"] = $user_array["rol_usuario"];
     $_SESSION["usuario_nombre"] = $user_array["nom"];
     $_SESSION["usuario_email"] = $user_array["email"];
 }
 
-function unsetAlumnoSession(){
+function unsetAlumnoSession()
+{
     unset($_SESSION["usuario_activo"]);
     unset($_SESSION["usuario_tipo"]);
     unset($_SESSION["usuario_nombre"]);

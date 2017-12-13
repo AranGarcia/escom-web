@@ -9,11 +9,11 @@ session_start();
 
 // Si ningún usuario está activo se regresa a pagina principal
 if (!isset($_SESSION["usuario_activo"])) {
-    header("Location: " . $configs["urls"][base]);
+    header("Location: " . $configs["urls"]["base"]);
     exit();
 }
 
-// De igual manera si no es administrador
+// De igual manera si no es alumno
 else if ($_SESSION["usuario_tipo"] != "alumno") {
     unsetSession();
     header("Location: " . $configs["urls"][base]);
