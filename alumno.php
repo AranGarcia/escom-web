@@ -40,6 +40,7 @@ $ceremonias = obtenerCeremonias($_SESSION["usuario_activo"]);
     <link href="fonts/iconos-sseis/iconos-sseis.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/cambio_passw.js"></script>
+    <script src="js/upload_img.js"></script>
     <script type="text/javascript" src="js/cambio-seccion-script.js"></script>
     <title>Inicio</title>
 </head>
