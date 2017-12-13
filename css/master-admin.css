@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+body{
+	font-size: 0;
+	background-color: #F2F4F4;
+}
+
+.contenedor-menu{
+	position: fixed;
+	height: 100vh;
+	width: 220px;
+	background-color: #030b19;
+	color: #FFFFFF;
+	font-size: 17px;
+	overflow: hidden;
+}
+
+.contenedor-menu a{
+	color: #dbdbdb;
+	font-size: 17px;
+	font-weight: 400;
+	width: 100%;
+	padding: 20px;
+}
+
+.contenedor-menu > a:hover{
+	color: #FFFFFF;
+}
+
+.contenedor-menu ul li{
+	position: relative;
+	display: flex;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    -ms-transition: all 0.3s ease-in-out 0s;
+    -o-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.contenedor-menu ul li:nth-child(1){
+	padding: 30px 20px;
+}
+
+.contenedor-menu ul li:hover:nth-child(n+2){
+	background-color: #091323;
+	cursor: pointer;
+}
+
+.contenedor-menu ul li:hover:nth-child(n+2) a{
+	color: #FFFFFF;
+}
+
+.activo{
+	color: #FFFFFF !important;
+}
+
+.logo-escom-menu{
+	width: 100px;
+	margin-right: 10px;
+}
+
+.op-cerrar-sesion{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	padding: 0 !important;
+	font-size: 15px !important;
+	width: auto !important;
+}
+
+
+/*SECCIONES*/
+.contenedor-secciones{
+	float: right;
+	width: calc(100% - 220px);
+	padding: 80px 40px 0;
+}
