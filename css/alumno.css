@@ -241,3 +241,30 @@ body{
 	max-width: 1000px;
 	margin: 0 auto;
 }
+
+/* INVITACIONES MENU */
+.contenedor-tarjeta-inv-menu{
+	position: relative;
+	width: 100%;
+	max-width: 1000px;
+	background-color: #7ebeed;
+	margin: 20px auto 60px;
+	display: flex;
+}
+
+.contenedor-tarjeta-inv-menu h1{
+	text-align: center;
+	margin: 40px;
+	color: #FFFFFF;
+}
+
+.contenedor-tarjeta-inv-menu p{
+	margin: 0 40px 0 50px;
+	color: #FFFFFF;
+	font-weight: 400;
+}
+
+.contenedor-tarjeta-inv-menu button{
+	margin: 40px 0 0;
+	width: 100%;
+}

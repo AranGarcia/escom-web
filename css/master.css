@@ -113,3 +113,7 @@ button:hover{
 .contenedor-mitad{
 	width: 50%;
 }
+
+.contenedor-mitad-inv{
+	width: 100%;
+}
